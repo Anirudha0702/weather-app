@@ -1,22 +1,30 @@
-# Weather App Readme
+# React + TypeScript + Vite
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-## 1. Introduction
-The Weather App is a user-friendly and reliable application that provides accurate and up-to-date weather information for any location worldwide. It is designed in an easy-to-read format.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 2. Features
-- **Real-time Weather Data:** Get the latest weather updates for your chosen location.
-- **Current Conditions:** Detailed information on temperature, humidity, wind speed, and more.
-- **Search by Location:** Easily search for weather information for any city .
+## Expanding the ESLint configuration
 
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-1. Fork the [Weather App GitHub repository](https://github.com/Anirudha0702/weather-app).
-2. Make your changes and improvements.
-3. Submit a pull request to the main repository.
+- Configure the top-level `parserOptions` property like this:
 
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-Thank you for choosing the Weather App! We hope it helps you stay informed about the weather and plan your activities accordingly.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
