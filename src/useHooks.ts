@@ -55,7 +55,8 @@ export const requestHandler = async (
     info.success = true;
     info.forecasts = forecast;
   } catch (error) {
-    console.log(error);
+    window.alert("Geo Location not available or Invalid City Name");
+    console.log(error)
   }
   return info;
 };

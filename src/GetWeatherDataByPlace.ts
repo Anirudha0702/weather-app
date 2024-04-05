@@ -6,5 +6,8 @@ export const GetWeatherDataByPlace = async(place: string):Promise<IWeatherData>=
         import.meta.env.VITE_api_key
     }`;
         const res = await requestHandler(url); 
+        if(!res.success){
+            // window.alert("Invalid City Name");
+        }
         return res;
 };
